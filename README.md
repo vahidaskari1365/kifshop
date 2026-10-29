@@ -156,6 +156,37 @@ db/                             # schema.sql و seed.sql
 
 ---
 
+## انتشار در گیت‌هاب
+
+مخزن محلی آماده و کامیت‌شده است؛ فقط احراز هویت لازم است:
+
+```bash
+git remote add origin https://github.com/vahidaskari1365/kifshop.git
+git branch -M main
+git push -u origin main
+```
+
+اگر Git از شما رمز پرسید، به‌جای رمز حساب از **Personal Access Token** استفاده کنید
+(GitHub → Settings → Developer settings → Tokens (classic) → scope: `repo`):
+
+```bash
+git remote set-url origin https://<TOKEN>@github.com/vahidaskari1365/kifshop.git
+git push -u origin main
+git remote set-url origin https://github.com/vahidaskari1365/kifshop.git   # حذف توکن از remote
+```
+
+یا با GitHub CLI:
+
+```bash
+gh auth login
+gh repo set-default vahidaskari1365/kifshop
+git push -u origin main
+```
+
+> فایل `.env` عمداً کامیت نمی‌شود (فقط `.env.example`). تصاویر و مدل‌ها/داده‌ی دیتابیس مخزن‌شده‌اند.
+
+---
+
 ## اسکریپت‌ها
 
 | دستور | کار |
